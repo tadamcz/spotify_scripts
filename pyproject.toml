@@ -1,0 +1,38 @@
+[tool]
+[tool.poetry]
+name = "spotify_scripts"
+version = "0.1.0"
+homepage = "https://github.com/tadamcz/spotify_scripts"
+description = "Top-level package for spotify scripts."
+authors = ["Tom Adamczewski <tadamczewskipublic@gmail.com>"]
+readme = "README.md"
+classifiers=[
+    'Natural Language :: English',
+    'Programming Language :: Python :: 3',
+]
+packages = [
+    { include = "spotify_scripts" },
+    { include = "tests", format = "sdist" },
+]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.12"
+spotipy = "^2.22.1"
+python-dotenv = "^1.0.0"
+
+[tool.poetry.group.dev.dependencies]
+coverage = "*"
+pytest = ">=7.2.0"
+black = {extras = ["d"], version = "*"}
+
+
+
+[tool.black]
+line-length = 100
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
+
+[tool.isort]
+profile = "black"
