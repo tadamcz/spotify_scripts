@@ -82,6 +82,11 @@ if __name__ == "__main__":
         else:
             # Add tracks to playlist
             print(f"Adding {len(tracks_to_add)} tracks to playlist")
+            if len(tracks_to_add) >= 50:
+                print(
+                    "WARNING: Maxed out the 50 track limit for recent tracks, you likely missed some tracks! It's "
+                    "recommended to run the script more frequently."
+                )
             track_ids = [track["track"]["id"] for track in tracks_to_add]
             spt.playlist_add_items(playlist_id, track_ids)
             print_playlist_count(playlist_id)
