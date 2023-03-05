@@ -10,6 +10,8 @@ from spotipy.oauth2 import SpotifyOAuth
 from spotify_scripts.log import Tee
 
 if __name__ == "__main__":
+    # You should run this script periodically. You can only get the 50 most recent tracks from the API,
+    # so you should run this script frequently enough (e.g. every hour)
     with Tee(f"logs/{datetime.datetime.now().isoformat()}_save_recent.log"):
         load_dotenv()
 
