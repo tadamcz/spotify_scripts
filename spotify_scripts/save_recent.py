@@ -58,7 +58,8 @@ if __name__ == "__main__":
                 tracks_to_add.append(track)
 
         # Delete tracks from playlist if we have too many
-        MAX_PLAYLIST_TRACKS = 5000
+        # Rough order of magnitude for downloads on 'very high' quality: 1000 tracks = 10 GB
+        MAX_PLAYLIST_TRACKS = 1500
 
         print_playlist_count(playlist_id)
         n_tracks_to_delete = max(
