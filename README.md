@@ -10,8 +10,15 @@ You can only get the 50 most recent tracks from the API, so you should run this 
 
 
 # Deployment
-After defining the `dokku` remote: `git push dokku`.
+First deployment:
+- Define the dokku remote
+- `git push dokku`
+- Define `ROOT_DIR` as a persistent volume attached to the Dokku container (`dokku storage` on host)
+- Define environment variables (`dokku config` on host)
 
-Dokku config files:
+Subsequent deployments:
+- `git push dokku`
+
+The Dokku config files are:
 - `.buildpacks`
 - `app.json`
