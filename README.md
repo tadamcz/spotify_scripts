@@ -6,8 +6,6 @@ The main use case for me is that I set that playlist to be downloaded offline on
 
 You can only get the 50 most recent tracks from the API, so you should run this script frequently enough (e.g. every half hour). I do this by deploying to a cloud VPS with Dokku, and scheduling a cron task in Dokku (see `app.json`).
 
-(This script also saves the recent tracks to a [`shelve`](https://docs.python.org/3/library/shelve.html) shelf for potential future use. Because of Spotify's annoying 50 track limit, there's actually no simple way to get this data again in the future.)
-
 
 # Deployment
 First deployment:

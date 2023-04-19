@@ -102,9 +102,3 @@ if __name__ == "__main__":
             saved_up_to = datetime.datetime.fromisoformat(saved_up_to)
             print(f"Saved tracks up to {saved_up_to} to playlist, writing datetime to disk...")
             db["saved_up_to"] = saved_up_to
-            print(f"Writing {len(tracks_to_add)} tracks to disk...")
-            key = f"tracks_savepoint_{saved_up_to.isoformat()}"
-            db[key] = tracks_to_add
-
-    # Print shelf size
-    print(f"Shelf size: {os.path.getsize(f'{ROOT_DIR}/data.db') / 1024 / 1024} MB")
